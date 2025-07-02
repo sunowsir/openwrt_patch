@@ -1,0 +1,18 @@
+Index: openwrt/config/Config-images.in
+===================================================================
+--- openwrt.orig/config/Config-images.in
++++ openwrt/config/Config-images.in
+@@ -257,6 +257,13 @@ menu "Target Images"
+ 		depends on TARGET_x86
+ 		depends on GRUB_IMAGES || GRUB_EFI_IMAGES
+ 
++	config QCOW2_IMAGES
++		bool "Build PVE/KVM image files (QCOW2)"
++		depends on TARGET_x86
++		depends on GRUB_IMAGES || GRUB_EFI_IMAGES
++		select PACKAGE_kmod-e1000
++		default y if BUILDBOT
++
+ 	config VDI_IMAGES
+ 		bool "Build VirtualBox image files (VDI)"
+ 		depends on TARGET_x86

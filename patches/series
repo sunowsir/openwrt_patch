@@ -1,0 +1,7 @@
+modify-config-images.patch
+modify-x86-image-makefile.patch
+modify-luci-mod-status-bandwidth-js.patch
+modify-luci-mod-status-channel_analysis-js.patch
+modify-luci-mod-status-load-js.patch
+modify-luci-mod-status-wireless-js.patch
+modify-luci-mod-status-connections-js.patch
