@@ -6,3 +6,4 @@ modify-luci-mod-status-channel_analysis-js.patch
 modify-luci-mod-status-connections-js.patch
 modify-luci-mod-status-load-js.patch
 modify-luci-mod-status-wireless-js.patch
+modify-.config.patch
