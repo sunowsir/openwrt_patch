@@ -4638,11 +4638,12 @@ Index: openwrt/.config
 -# CONFIG_PACKAGE_luci-app-sshtunnel is not set
 -# CONFIG_PACKAGE_luci-app-statistics is not set
 -# CONFIG_PACKAGE_luci-app-tinyproxy is not set
+-# CONFIG_PACKAGE_luci-app-tor is not set
+-# CONFIG_PACKAGE_luci-app-transmission is not set
 +CONFIG_PACKAGE_luci-app-sshtunnel=m
 +CONFIG_PACKAGE_luci-app-statistics=m
 +CONFIG_PACKAGE_luci-app-tinyproxy=m
- # CONFIG_PACKAGE_luci-app-tor is not set
--# CONFIG_PACKAGE_luci-app-transmission is not set
++CONFIG_PACKAGE_luci-app-tor=m
 +CONFIG_PACKAGE_luci-app-transmission=m
  # CONFIG_PACKAGE_luci-app-travelmate is not set
 -# CONFIG_PACKAGE_luci-app-ttyd is not set
@@ -4673,7 +4674,7 @@ Index: openwrt/.config
  # CONFIG_PACKAGE_luci-theme-material is not set
  # CONFIG_PACKAGE_luci-theme-openwrt is not set
  # CONFIG_PACKAGE_luci-theme-openwrt-2020 is not set
-@@ -5209,41 +6540,1417 @@ CONFIG_LUCI_CSSTIDY=y
+@@ -5209,41 +6540,1452 @@ CONFIG_LUCI_CSSTIDY=y
  # CONFIG_PACKAGE_luci-proto-gre is not set
  # CONFIG_PACKAGE_luci-proto-hnet is not set
  # CONFIG_PACKAGE_luci-proto-ipip is not set
@@ -5889,6 +5890,41 @@ Index: openwrt/.config
 +CONFIG_PACKAGE_luci-i18n-tinyproxy-vi=m
 +CONFIG_PACKAGE_luci-i18n-tinyproxy-zh-cn=m
 +CONFIG_PACKAGE_luci-i18n-tinyproxy-zh-tw=m
++CONFIG_PACKAGE_luci-i18n-tor-ar=m
++CONFIG_PACKAGE_luci-i18n-tor-bg=m
++CONFIG_PACKAGE_luci-i18n-tor-bn=m
++CONFIG_PACKAGE_luci-i18n-tor-ca=m
++CONFIG_PACKAGE_luci-i18n-tor-cs=m
++CONFIG_PACKAGE_luci-i18n-tor-da=m
++CONFIG_PACKAGE_luci-i18n-tor-de=m
++CONFIG_PACKAGE_luci-i18n-tor-el=m
++CONFIG_PACKAGE_luci-i18n-tor-es=m
++CONFIG_PACKAGE_luci-i18n-tor-fi=m
++CONFIG_PACKAGE_luci-i18n-tor-fr=m
++CONFIG_PACKAGE_luci-i18n-tor-he=m
++CONFIG_PACKAGE_luci-i18n-tor-hi=m
++CONFIG_PACKAGE_luci-i18n-tor-hu=m
++CONFIG_PACKAGE_luci-i18n-tor-it=m
++CONFIG_PACKAGE_luci-i18n-tor-ja=m
++CONFIG_PACKAGE_luci-i18n-tor-ko=m
++CONFIG_PACKAGE_luci-i18n-tor-lt=m
++CONFIG_PACKAGE_luci-i18n-tor-mr=m
++CONFIG_PACKAGE_luci-i18n-tor-ms=m
++CONFIG_PACKAGE_luci-i18n-tor-nl=m
++CONFIG_PACKAGE_luci-i18n-tor-no=m
++CONFIG_PACKAGE_luci-i18n-tor-pl=m
++CONFIG_PACKAGE_luci-i18n-tor-pt=m
++CONFIG_PACKAGE_luci-i18n-tor-pt-br=m
++CONFIG_PACKAGE_luci-i18n-tor-ro=m
++CONFIG_PACKAGE_luci-i18n-tor-ru=m
++CONFIG_PACKAGE_luci-i18n-tor-sk=m
++CONFIG_PACKAGE_luci-i18n-tor-sv=m
++CONFIG_PACKAGE_luci-i18n-tor-tr=m
++CONFIG_PACKAGE_luci-i18n-tor-uk=m
++CONFIG_PACKAGE_luci-i18n-tor-vi=m
++CONFIG_PACKAGE_luci-i18n-tor-yua=m
++CONFIG_PACKAGE_luci-i18n-tor-zh-cn=m
++CONFIG_PACKAGE_luci-i18n-tor-zh-tw=m
 +CONFIG_PACKAGE_luci-i18n-transmission-ar=m
 +CONFIG_PACKAGE_luci-i18n-transmission-bg=m
 +CONFIG_PACKAGE_luci-i18n-transmission-bn=m
@@ -6100,7 +6136,7 @@ Index: openwrt/.config
  # end of LuCI
  
  #
-@@ -5273,6 +7980,7 @@ CONFIG_LUCI_CSSTIDY=y
+@@ -5273,6 +8015,7 @@ CONFIG_LUCI_CSSTIDY=y
  # CONFIG_PACKAGE_opendkim is not set
  # CONFIG_PACKAGE_opendkim-tools is not set
  # CONFIG_PACKAGE_postfix is not set
@@ -6108,7 +6144,7 @@ Index: openwrt/.config
  # CONFIG_PACKAGE_spamc is not set
  # CONFIG_PACKAGE_spamc-ssl is not set
  # end of Mail
-@@ -5331,7 +8039,7 @@ CONFIG_LUCI_CSSTIDY=y
+@@ -5331,7 +8074,7 @@ CONFIG_LUCI_CSSTIDY=y
  # CONFIG_PACKAGE_rtorrent is not set
  # CONFIG_PACKAGE_rtorrent-rpc is not set
  # CONFIG_PACKAGE_transmission-cli is not set
@@ -6117,7 +6153,7 @@ Index: openwrt/.config
  # CONFIG_PACKAGE_transmission-remote is not set
  # CONFIG_PACKAGE_transmission-web is not set
  # CONFIG_PACKAGE_transmission-web-control is not set
-@@ -5345,7 +8053,9 @@ CONFIG_LUCI_CSSTIDY=y
+@@ -5345,7 +8088,9 @@ CONFIG_LUCI_CSSTIDY=y
  # CONFIG_PACKAGE_mesh11sd is not set
  # CONFIG_PACKAGE_nodogsplash is not set
  # CONFIG_PACKAGE_opennds is not set
@@ -6128,7 +6164,7 @@ Index: openwrt/.config
  # CONFIG_PACKAGE_wifidog is not set
  # CONFIG_PACKAGE_wifidog-tls is not set
  # end of Captive Portals
-@@ -5353,6 +8063,7 @@ CONFIG_LUCI_CSSTIDY=y
+@@ -5353,6 +8098,7 @@ CONFIG_LUCI_CSSTIDY=y
  #
  # Cloud Manager
  #
@@ -6136,7 +6172,7 @@ Index: openwrt/.config
  # CONFIG_PACKAGE_rclone-ng is not set
  # CONFIG_PACKAGE_rclone-webui-react is not set
  # end of Cloud Manager
-@@ -5377,20 +8088,43 @@ CONFIG_LUCI_CSSTIDY=y
+@@ -5377,20 +8123,43 @@ CONFIG_LUCI_CSSTIDY=y
  #
  # File Transfer
  #
@@ -6184,7 +6220,7 @@ Index: openwrt/.config
  # end of File Transfer
  
  #
-@@ -5424,29 +8158,53 @@ CONFIG_LUCI_CSSTIDY=y
+@@ -5424,29 +8193,53 @@ CONFIG_LUCI_CSSTIDY=y
  # CONFIG_PACKAGE_fwknopd is not set
  # CONFIG_PACKAGE_ip6tables-extra is not set
  # CONFIG_PACKAGE_ip6tables-mod-nat is not set
@@ -6245,7 +6281,7 @@ Index: openwrt/.config
  
  #
  # Select iptasn options
-@@ -5454,6 +8212,8 @@ CONFIG_LUCI_CSSTIDY=y
+@@ -5454,6 +8247,8 @@ CONFIG_LUCI_CSSTIDY=y
  # CONFIG_IPTASN_PRESERVE is not set
  # end of Select iptasn options
  
@@ -6254,7 +6290,7 @@ Index: openwrt/.config
  #
  # Select iptgeoip options
  #
-@@ -5462,17 +8222,19 @@ CONFIG_LUCI_CSSTIDY=y
+@@ -5462,17 +8257,19 @@ CONFIG_LUCI_CSSTIDY=y
  
  # CONFIG_PACKAGE_miniupnpc is not set
  # CONFIG_PACKAGE_miniupnpd-iptables is not set
@@ -6277,7 +6313,7 @@ Index: openwrt/.config
  # end of Firewall
  
  #
-@@ -5498,23 +8260,45 @@ CONFIG_PACKAGE_nftables-json=y
+@@ -5498,23 +8295,45 @@ CONFIG_PACKAGE_nftables-json=y
  # CONFIG_PACKAGE_avahi-autoipd is not set
  # CONFIG_PACKAGE_avahi-daemon-service-http is not set
  # CONFIG_PACKAGE_avahi-daemon-service-ssh is not set
@@ -6329,7 +6365,7 @@ Index: openwrt/.config
  # CONFIG_PACKAGE_dhcp-forwarder is not set
  # CONFIG_PACKAGE_dhtd is not set
  # CONFIG_PACKAGE_dns-over-https is not set
-@@ -5525,8 +8309,8 @@ CONFIG_PACKAGE_nftables-json=y
+@@ -5525,8 +8344,8 @@ CONFIG_PACKAGE_nftables-json=y
  # CONFIG_PACKAGE_dnsdist-full is not set
  # CONFIG_PACKAGE_dnslookup is not set
  # CONFIG_PACKAGE_dnsproxy is not set
@@ -6340,7 +6376,7 @@ Index: openwrt/.config
  # CONFIG_PACKAGE_hostip is not set
  # CONFIG_PACKAGE_idn is not set
  # CONFIG_PACKAGE_idn2 is not set
-@@ -5553,7 +8337,7 @@ CONFIG_PACKAGE_nftables-json=y
+@@ -5553,7 +8372,7 @@ CONFIG_PACKAGE_nftables-json=y
  # CONFIG_PACKAGE_kea-shell is not set
  # CONFIG_PACKAGE_knot is not set
  # CONFIG_PACKAGE_knot-dig is not set
@@ -6349,7 +6385,16 @@ Index: openwrt/.config
  # CONFIG_PACKAGE_knot-keymgr is not set
  # CONFIG_PACKAGE_knot-nsupdate is not set
  
-@@ -5588,10 +8372,10 @@ CONFIG_PACKAGE_knot-resolver_dnstap=y
+@@ -5580,7 +8399,7 @@ CONFIG_PACKAGE_knot-resolver_dnstap=y
+ # CONFIG_PACKAGE_pdns-recursor is not set
+ # CONFIG_PACKAGE_pdns-tools is not set
+ # CONFIG_PACKAGE_stubby is not set
+-# CONFIG_PACKAGE_tor-hs is not set
++CONFIG_PACKAGE_tor-hs=m
+ # CONFIG_PACKAGE_torsocks is not set
+ # CONFIG_PACKAGE_unbound-anchor is not set
+ # CONFIG_PACKAGE_unbound-checkconf is not set
+@@ -5588,10 +8407,10 @@ CONFIG_PACKAGE_knot-resolver_dnstap=y
  # CONFIG_PACKAGE_unbound-control-setup is not set
  # CONFIG_PACKAGE_unbound-daemon is not set
  # CONFIG_PACKAGE_unbound-host is not set
@@ -6363,7 +6408,7 @@ Index: openwrt/.config
  # CONFIG_PACKAGE_zonestitcher is not set
  # end of IP Addresses and Names
  
-@@ -5656,7 +8440,7 @@ CONFIG_PACKAGE_knot-resolver_dnstap=y
+@@ -5656,7 +8475,7 @@ CONFIG_PACKAGE_knot-resolver_dnstap=y
  # CONFIG_PACKAGE_ncat-ssl is not set
  # CONFIG_PACKAGE_ndiff is not set
  # CONFIG_PACKAGE_nmap is not set
@@ -6372,7 +6417,7 @@ Index: openwrt/.config
  # CONFIG_PACKAGE_nmap-ssl is not set
  # CONFIG_PACKAGE_nping is not set
  # CONFIG_PACKAGE_nping-ssl is not set
-@@ -5692,7 +8476,12 @@ CONFIG_PACKAGE_knot-resolver_dnstap=y
+@@ -5692,7 +8511,12 @@ CONFIG_PACKAGE_knot-resolver_dnstap=y
  #
  # OpenLDAP
  #
@@ -6386,7 +6431,7 @@ Index: openwrt/.config
  # CONFIG_PACKAGE_openldap-server is not set
  # CONFIG_PACKAGE_openldap-utils is not set
  # end of OpenLDAP
-@@ -5700,7 +8489,7 @@ CONFIG_PACKAGE_knot-resolver_dnstap=y
+@@ -5700,7 +8524,7 @@ CONFIG_PACKAGE_knot-resolver_dnstap=y
  #
  # Printing
  #
@@ -6395,7 +6440,7 @@ Index: openwrt/.config
  # end of Printing
  
  #
-@@ -5727,14 +8516,14 @@ CONFIG_PACKAGE_knot-resolver_dnstap=y
+@@ -5727,14 +8551,14 @@ CONFIG_PACKAGE_knot-resolver_dnstap=y
  # CONFIG_PACKAGE_genl is not set
  # CONFIG_PACKAGE_igmpproxy is not set
  # CONFIG_PACKAGE_ip-bridge is not set
@@ -6413,7 +6458,7 @@ Index: openwrt/.config
  # CONFIG_PACKAGE_prince is not set
  # CONFIG_PACKAGE_rdma is not set
  # CONFIG_PACKAGE_relayd is not set
-@@ -5743,7 +8532,7 @@ CONFIG_PACKAGE_knot-resolver_dnstap=y
+@@ -5743,7 +8567,7 @@ CONFIG_PACKAGE_knot-resolver_dnstap=y
  # CONFIG_PACKAGE_sslh is not set
  # CONFIG_PACKAGE_tc-bpf is not set
  # CONFIG_PACKAGE_tc-full is not set
@@ -6422,7 +6467,7 @@ Index: openwrt/.config
  # CONFIG_PACKAGE_tcpproxy is not set
  # CONFIG_PACKAGE_udp-broadcast-relay-redux is not set
  # CONFIG_PACKAGE_vis is not set
-@@ -5756,6 +8545,7 @@ CONFIG_PACKAGE_knot-resolver_dnstap=y
+@@ -5756,6 +8580,7 @@ CONFIG_PACKAGE_knot-resolver_dnstap=y
  #
  # CONFIG_PACKAGE_autossh is not set
  # CONFIG_PACKAGE_mosh-client is not set
@@ -6430,7 +6475,7 @@ Index: openwrt/.config
  # CONFIG_PACKAGE_mosh-server is not set
  # CONFIG_PACKAGE_openssh-client is not set
  # CONFIG_PACKAGE_openssh-client-utils is not set
-@@ -5765,8 +8555,8 @@ CONFIG_PACKAGE_knot-resolver_dnstap=y
+@@ -5765,8 +8590,8 @@ CONFIG_PACKAGE_knot-resolver_dnstap=y
  # CONFIG_PACKAGE_openssh-server-pam is not set
  # CONFIG_PACKAGE_openssh-sftp-avahi-service is not set
  # CONFIG_PACKAGE_openssh-sftp-client is not set
@@ -6441,7 +6486,7 @@ Index: openwrt/.config
  # CONFIG_PACKAGE_tmate is not set
  # end of SSH
  
-@@ -5871,7 +8661,7 @@ CONFIG_PACKAGE_knot-resolver_dnstap=y
+@@ -5871,7 +8696,7 @@ CONFIG_PACKAGE_knot-resolver_dnstap=y
  # Time Synchronization
  #
  # CONFIG_PACKAGE_chrony is not set
@@ -6450,7 +6495,7 @@ Index: openwrt/.config
  # CONFIG_PACKAGE_htpdate is not set
  # CONFIG_PACKAGE_linuxptp is not set
  # CONFIG_PACKAGE_ntp-keygen is not set
-@@ -5918,16 +8708,25 @@ CONFIG_PACKAGE_knot-resolver_dnstap=y
+@@ -5918,16 +8743,25 @@ CONFIG_PACKAGE_knot-resolver_dnstap=y
  # CONFIG_PACKAGE_wgsd-coredns is not set
  # CONFIG_PACKAGE_wireguard-tools is not set
  # CONFIG_PACKAGE_xl2tpd is not set
@@ -6481,7 +6526,7 @@ Index: openwrt/.config
  # CONFIG_PACKAGE_subversion-server is not set
  # end of Version Control Systems
  
-@@ -5939,24 +8738,26 @@ CONFIG_PACKAGE_knot-resolver_dnstap=y
+@@ -5939,24 +8773,26 @@ CONFIG_PACKAGE_knot-resolver_dnstap=y
  # CONFIG_PACKAGE_comgt-directip is not set
  # CONFIG_PACKAGE_comgt-ncm is not set
  # CONFIG_PACKAGE_umbim is not set
@@ -6515,7 +6560,7 @@ Index: openwrt/.config
  # CONFIG_PACKAGE_haproxy-nossl is not set
  # CONFIG_PACKAGE_kcptun-client is not set
  # CONFIG_PACKAGE_kcptun-config is not set
-@@ -5964,6 +8765,7 @@ CONFIG_PACKAGE_knot-resolver_dnstap=y
+@@ -5964,6 +8800,7 @@ CONFIG_PACKAGE_knot-resolver_dnstap=y
  # CONFIG_PACKAGE_librespeed-go is not set
  # CONFIG_PACKAGE_lighttpd is not set
  # CONFIG_PACKAGE_microsocks is not set
@@ -6523,7 +6568,7 @@ Index: openwrt/.config
  # CONFIG_PACKAGE_nginx-full is not set
  # CONFIG_PACKAGE_nginx-mod-brotli is not set
  # CONFIG_PACKAGE_nginx-mod-dav-ext is not set
-@@ -5982,34 +8784,66 @@ CONFIG_PACKAGE_knot-resolver_dnstap=y
+@@ -5982,34 +8819,66 @@ CONFIG_PACKAGE_knot-resolver_dnstap=y
  # CONFIG_PACKAGE_nginx-ssl is not set
  # CONFIG_PACKAGE_nginx-ssl-util is not set
  # CONFIG_PACKAGE_nginx-ssl-util-nopcre is not set
@@ -6603,7 +6648,7 @@ Index: openwrt/.config
  # CONFIG_PACKAGE_xfrpc is not set
  # CONFIG_PACKAGE_xray-plugin is not set
  # end of Web Servers/Proxies
-@@ -6019,7 +8853,7 @@ CONFIG_PACKAGE_knot-resolver_dnstap=y
+@@ -6019,7 +8888,7 @@ CONFIG_PACKAGE_knot-resolver_dnstap=y
  #
  # CONFIG_PACKAGE_aircrack-ng is not set
  # CONFIG_PACKAGE_airmon-ng is not set
@@ -6612,7 +6657,7 @@ Index: openwrt/.config
  # CONFIG_PACKAGE_hcxdumptool is not set
  # CONFIG_PACKAGE_hcxtools is not set
  # CONFIG_PACKAGE_horst is not set
-@@ -6038,7 +8872,7 @@ CONFIG_PACKAGE_knot-resolver_dnstap=y
+@@ -6038,7 +8907,7 @@ CONFIG_PACKAGE_knot-resolver_dnstap=y
  # CONFIG_PACKAGE_eapol-test-mbedtls is not set
  # CONFIG_PACKAGE_eapol-test-openssl is not set
  # CONFIG_PACKAGE_eapol-test-wolfssl is not set
@@ -6621,7 +6666,7 @@ Index: openwrt/.config
  # CONFIG_PACKAGE_hostapd-basic is not set
  # CONFIG_PACKAGE_hostapd-basic-mbedtls is not set
  # CONFIG_PACKAGE_hostapd-basic-openssl is not set
-@@ -6047,19 +8881,18 @@ CONFIG_PACKAGE_hostapd-common=y
+@@ -6047,19 +8916,18 @@ CONFIG_PACKAGE_hostapd-common=y
  # CONFIG_PACKAGE_hostapd-mbedtls is not set
  # CONFIG_PACKAGE_hostapd-mini is not set
  # CONFIG_PACKAGE_hostapd-openssl is not set
@@ -6645,7 +6690,7 @@ Index: openwrt/.config
  # CONFIG_WPA_ENABLE_WEP is not set
  CONFIG_WPA_MBO_SUPPORT=y
  # CONFIG_PACKAGE_wpa-supplicant-basic is not set
-@@ -6073,7 +8906,7 @@ CONFIG_WPA_MBO_SUPPORT=y
+@@ -6073,7 +8941,7 @@ CONFIG_WPA_MBO_SUPPORT=y
  # CONFIG_PACKAGE_wpa-supplicant-wolfssl is not set
  # CONFIG_PACKAGE_wpad is not set
  # CONFIG_PACKAGE_wpad-basic is not set
@@ -6654,7 +6699,7 @@ Index: openwrt/.config
  # CONFIG_PACKAGE_wpad-basic-openssl is not set
  # CONFIG_PACKAGE_wpad-basic-wolfssl is not set
  # CONFIG_PACKAGE_wpad-mbedtls is not set
-@@ -6097,13 +8930,13 @@ CONFIG_PACKAGE_wpad-basic-mbedtls=y
+@@ -6097,13 +8965,13 @@ CONFIG_PACKAGE_wpad-basic-mbedtls=y
  # CONFIG_PACKAGE_6rd is not set
  # CONFIG_PACKAGE_6to4 is not set
  # CONFIG_PACKAGE_UDPspeeder is not set
@@ -6671,7 +6716,7 @@ Index: openwrt/.config
  # CONFIG_PACKAGE_addrwatch is not set
  # CONFIG_PACKAGE_addrwatch-mysql is not set
  # CONFIG_PACKAGE_addrwatch-stdout is not set
-@@ -6111,7 +8944,6 @@ CONFIG_PACKAGE_wpad-basic-mbedtls=y
+@@ -6111,7 +8979,6 @@ CONFIG_PACKAGE_wpad-basic-mbedtls=y
  # CONFIG_PACKAGE_adguardhome is not set
  # CONFIG_PACKAGE_ahcpd is not set
  # CONFIG_PACKAGE_alfred is not set
@@ -6679,7 +6724,7 @@ Index: openwrt/.config
  # CONFIG_PACKAGE_antiblock is not set
  # CONFIG_PACKAGE_apcupsd is not set
  # CONFIG_PACKAGE_apcupsd-cgi is not set
-@@ -6154,7 +8986,7 @@ CONFIG_PACKAGE_wpad-basic-mbedtls=y
+@@ -6154,7 +9021,7 @@ CONFIG_PACKAGE_wpad-basic-mbedtls=y
  # CONFIG_PACKAGE_etherwake is not set
  # CONFIG_PACKAGE_etherwake-nfqueue is not set
  # CONFIG_PACKAGE_ethtool is not set
@@ -6688,7 +6733,7 @@ Index: openwrt/.config
  # CONFIG_PACKAGE_evilginx2 is not set
  # CONFIG_PACKAGE_external-protocol is not set
  # CONFIG_PACKAGE_fail2ban is not set
-@@ -6170,6 +9002,7 @@ CONFIG_PACKAGE_wpad-basic-mbedtls=y
+@@ -6170,6 +9037,7 @@ CONFIG_PACKAGE_wpad-basic-mbedtls=y
  # CONFIG_PACKAGE_geoip-shell is not set
  # CONFIG_PACKAGE_geoip-shell-iptables is not set
  # CONFIG_PACKAGE_geoipupdate is not set
@@ -6696,7 +6741,7 @@ Index: openwrt/.config
  # CONFIG_PACKAGE_git-lfs is not set
  # CONFIG_PACKAGE_gnunet is not set
  # CONFIG_PACKAGE_gping is not set
-@@ -6186,18 +9019,19 @@ CONFIG_PACKAGE_wpad-basic-mbedtls=y
+@@ -6186,18 +9054,19 @@ CONFIG_PACKAGE_wpad-basic-mbedtls=y
  # CONFIG_PACKAGE_hping3 is not set
  # CONFIG_PACKAGE_httping is not set
  # CONFIG_PACKAGE_httping-nossl is not set
@@ -6722,7 +6767,7 @@ Index: openwrt/.config
  # CONFIG_PACKAGE_ipip is not set
  # CONFIG_PACKAGE_ipset-dns is not set
  # CONFIG_PACKAGE_ipt2socks is not set
-@@ -6208,18 +9042,43 @@ CONFIG_PACKAGE_wpad-basic-mbedtls=y
+@@ -6208,18 +9077,43 @@ CONFIG_PACKAGE_wpad-basic-mbedtls=y
  # CONFIG_PACKAGE_iputils-tracepath is not set
  # CONFIG_PACKAGE_ipvsadm is not set
  # CONFIG_PACKAGE_irtt is not set
@@ -6771,7 +6816,7 @@ Index: openwrt/.config
  # CONFIG_PACKAGE_libndp is not set
  # CONFIG_PACKAGE_linknx is not set
  # CONFIG_PACKAGE_lynx is not set
-@@ -6245,7 +9104,7 @@ CONFIG_PACKAGE_iw=y
+@@ -6245,7 +9139,7 @@ CONFIG_PACKAGE_iw=y
  # CONFIG_PACKAGE_mptcpize is not set
  # CONFIG_PACKAGE_mtr-json is not set
  # CONFIG_PACKAGE_mtr-nojson is not set
@@ -6780,7 +6825,7 @@ Index: openwrt/.config
  # CONFIG_PACKAGE_nbd is not set
  # CONFIG_PACKAGE_nbd-server is not set
  # CONFIG_PACKAGE_ncp is not set
-@@ -6255,11 +9114,11 @@ CONFIG_PACKAGE_iw=y
+@@ -6255,11 +9149,11 @@ CONFIG_PACKAGE_iw=y
  # CONFIG_PACKAGE_nebula-cert is not set
  # CONFIG_PACKAGE_net-mtools is not set
  # CONFIG_PACKAGE_net-tools-route is not set
@@ -6794,7 +6839,16 @@ Index: openwrt/.config
  # CONFIG_PACKAGE_netsniff-ng is not set
  # CONFIG_PACKAGE_netstinky is not set
  # CONFIG_PACKAGE_nextdns is not set
-@@ -6286,6 +9145,7 @@ CONFIG_PACKAGE_odhcpd_ipv6only_ext_cer_i
+@@ -6268,7 +9162,7 @@ CONFIG_PACKAGE_iw=y
+ # CONFIG_PACKAGE_noping is not set
+ # CONFIG_PACKAGE_nqptp is not set
+ # CONFIG_PACKAGE_nut is not set
+-# CONFIG_PACKAGE_obfs4proxy is not set
++CONFIG_PACKAGE_obfs4proxy=m
+ CONFIG_PACKAGE_odhcp6c=y
+ CONFIG_PACKAGE_odhcp6c_ext_cer_id=0
+ # CONFIG_PACKAGE_odhcpd is not set
+@@ -6286,6 +9180,7 @@ CONFIG_PACKAGE_odhcpd_ipv6only_ext_cer_i
  # CONFIG_PACKAGE_oor is not set
  # CONFIG_PACKAGE_open-iscsi is not set
  # CONFIG_PACKAGE_openelp is not set
@@ -6802,7 +6856,7 @@ Index: openwrt/.config
  # CONFIG_PACKAGE_openthread-br is not set
  # CONFIG_PACKAGE_oping is not set
  # CONFIG_PACKAGE_ostiary is not set
-@@ -6315,6 +9175,7 @@ CONFIG_PACKAGE_ppp-mod-pppoe=y
+@@ -6315,6 +9210,7 @@ CONFIG_PACKAGE_ppp-mod-pppoe=y
  # CONFIG_PACKAGE_radsecproxy is not set
  # CONFIG_PACKAGE_ratched is not set
  # CONFIG_PACKAGE_ratechecker is not set
@@ -6810,7 +6864,7 @@ Index: openwrt/.config
  # CONFIG_PACKAGE_realtek-poe is not set
  # CONFIG_PACKAGE_redsocks is not set
  # CONFIG_PACKAGE_remserial is not set
-@@ -6326,22 +9187,54 @@ CONFIG_PACKAGE_ppp-mod-pppoe=y
+@@ -6326,34 +9222,59 @@ CONFIG_PACKAGE_ppp-mod-pppoe=y
  # CONFIG_PACKAGE_safe-search is not set
  # CONFIG_PACKAGE_samba4-admin is not set
  # CONFIG_PACKAGE_samba4-client is not set
@@ -6831,18 +6885,11 @@ Index: openwrt/.config
  # CONFIG_PACKAGE_sctp-tools is not set
  # CONFIG_PACKAGE_ser2net is not set
 -# CONFIG_PACKAGE_simple-obfs is not set
-+CONFIG_PACKAGE_simple-obfs=y
++CONFIG_PACKAGE_simple-obfs-client=y
  # CONFIG_PACKAGE_simple-obfs-server is not set
 -# CONFIG_PACKAGE_sing-box is not set
 -# CONFIG_PACKAGE_slirp4netns is not set
 -# CONFIG_PACKAGE_smartdns is not set
-+
-+#
-+# Simple-obfs Compile Configuration
-+#
-+# CONFIG_SIMPLE_OBFS_STATIC_LINK is not set
-+# end of Simple-obfs Compile Configuration
-+
 +CONFIG_PACKAGE_sing-box=y
 +
 +#
@@ -6872,9 +6919,16 @@ Index: openwrt/.config
 +CONFIG_PACKAGE_snmp-utils=m
 +CONFIG_PACKAGE_snmpd=m
  # CONFIG_PACKAGE_snmptrapd is not set
- # CONFIG_PACKAGE_snowflake-broker is not set
- # CONFIG_PACKAGE_snowflake-client is not set
-@@ -6351,9 +9244,9 @@ CONFIG_PACKAGE_ppp-mod-pppoe=y
+-# CONFIG_PACKAGE_snowflake-broker is not set
+-# CONFIG_PACKAGE_snowflake-client is not set
+-# CONFIG_PACKAGE_snowflake-probetest is not set
+-# CONFIG_PACKAGE_snowflake-proxy is not set
+-# CONFIG_PACKAGE_snowflake-server is not set
++CONFIG_PACKAGE_snowflake-broker=m
++CONFIG_PACKAGE_snowflake-client=m
++CONFIG_PACKAGE_snowflake-probetest=m
++CONFIG_PACKAGE_snowflake-proxy=m
++CONFIG_PACKAGE_snowflake-server=m
  # CONFIG_PACKAGE_socat is not set
  # CONFIG_PACKAGE_softflowd is not set
  # CONFIG_PACKAGE_soloscli is not set
@@ -6887,7 +6941,7 @@ Index: openwrt/.config
  # CONFIG_PACKAGE_spoofer is not set
  # CONFIG_PACKAGE_sscep is not set
  # CONFIG_PACKAGE_static-neighbor-reports is not set
-@@ -6362,9 +9255,9 @@ CONFIG_PACKAGE_ppp-mod-pppoe=y
+@@ -6362,14 +9283,17 @@ CONFIG_PACKAGE_ppp-mod-pppoe=y
  # CONFIG_PACKAGE_tac_plus is not set
  # CONFIG_PACKAGE_tac_plus-pam is not set
  # CONFIG_PACKAGE_tayga is not set
@@ -6899,7 +6953,17 @@ Index: openwrt/.config
  # CONFIG_PACKAGE_telnet-bsd is not set
  # CONFIG_PACKAGE_tgt is not set
  # CONFIG_PACKAGE_tmate-ssh-server is not set
-@@ -6396,18 +9289,21 @@ CONFIG_PACKAGE_uclient-fetch=y
+-# CONFIG_PACKAGE_tor is not set
+-# CONFIG_PACKAGE_tor-basic is not set
++CONFIG_PACKAGE_tor=m
++CONFIG_PACKAGE_tor-basic=m
++CONFIG_PACKAGE_tor-gencert=m
++CONFIG_PACKAGE_tor-geoip=m
++CONFIG_PACKAGE_tor-resolve=m
+ # CONFIG_PACKAGE_trafficshaper is not set
+ # CONFIG_PACKAGE_travelmate is not set
+ # CONFIG_PACKAGE_trojan-plus is not set
+@@ -6396,18 +9320,21 @@ CONFIG_PACKAGE_uclient-fetch=y
  # CONFIG_PACKAGE_vallumd is not set
  # CONFIG_PACKAGE_vnstat is not set
  # CONFIG_PACKAGE_vnstat2 is not set
@@ -6923,7 +6987,7 @@ Index: openwrt/.config
  # CONFIG_PACKAGE_ztdns is not set
  # end of Network
  
-@@ -6418,13 +9314,22 @@ CONFIG_PACKAGE_uclient-fetch=y
+@@ -6418,13 +9345,22 @@ CONFIG_PACKAGE_uclient-fetch=y
  # CONFIG_PACKAGE_alsa-utils-seq is not set
  # CONFIG_PACKAGE_alsa-utils-tests is not set
  # CONFIG_PACKAGE_aserver is not set
@@ -6947,7 +7011,7 @@ Index: openwrt/.config
  # CONFIG_PACKAGE_madplay is not set
  # CONFIG_PACKAGE_moc is not set
  # CONFIG_PACKAGE_mpc is not set
-@@ -6444,8 +9349,7 @@ CONFIG_PACKAGE_uclient-fetch=y
+@@ -6444,8 +9380,7 @@ CONFIG_PACKAGE_uclient-fetch=y
  # CONFIG_PACKAGE_shairport-sync-mini is not set
  # CONFIG_PACKAGE_shairport-sync-openssl is not set
  # CONFIG_PACKAGE_shine is not set
@@ -6957,7 +7021,7 @@ Index: openwrt/.config
  # CONFIG_PACKAGE_squeezelite-dynamic is not set
  # CONFIG_PACKAGE_squeezelite-full is not set
  # CONFIG_PACKAGE_svox is not set
-@@ -6477,7 +9381,9 @@ CONFIG_PACKAGE_uclient-fetch=y
+@@ -6477,7 +9412,9 @@ CONFIG_PACKAGE_uclient-fetch=y
  # Boot Loaders
  #
  # CONFIG_PACKAGE_fconfig is not set
@@ -6968,7 +7032,7 @@ Index: openwrt/.config
  # end of Boot Loaders
  
  #
-@@ -6485,17 +9391,25 @@ CONFIG_PACKAGE_uboot-envtools=y
+@@ -6485,17 +9422,25 @@ CONFIG_PACKAGE_uboot-envtools=y
  #
  # CONFIG_PACKAGE_bsdtar is not set
  # CONFIG_PACKAGE_bsdtar-noopenssl is not set
@@ -7004,7 +7068,7 @@ Index: openwrt/.config
  # end of Compression
  
  #
-@@ -6507,7 +9421,7 @@ CONFIG_PACKAGE_uboot-envtools=y
+@@ -6507,7 +9452,7 @@ CONFIG_PACKAGE_uboot-envtools=y
  # CONFIG_PACKAGE_pgsql-cli-extra is not set
  # CONFIG_PACKAGE_pgsql-server is not set
  # CONFIG_PACKAGE_rrdcgi1 is not set
@@ -7013,7 +7077,7 @@ Index: openwrt/.config
  # CONFIG_PACKAGE_sqlite3-cli is not set
  # CONFIG_PACKAGE_unixodbc-tools is not set
  # end of Database
-@@ -6516,27 +9430,36 @@ CONFIG_PACKAGE_uboot-envtools=y
+@@ -6516,27 +9461,36 @@ CONFIG_PACKAGE_uboot-envtools=y
  # Disc
  #
  # CONFIG_PACKAGE_autopart is not set
@@ -7057,7 +7121,7 @@ Index: openwrt/.config
  # CONFIG_PACKAGE_sfdisk is not set
  # CONFIG_PACKAGE_sgdisk is not set
  # CONFIG_PACKAGE_uvol is not set
-@@ -6556,7 +9479,7 @@ CONFIG_PACKAGE_uboot-envtools=y
+@@ -6556,7 +9510,7 @@ CONFIG_PACKAGE_uboot-envtools=y
  # CONFIG_PACKAGE_nano-plus is not set
  # CONFIG_PACKAGE_vim is not set
  # CONFIG_PACKAGE_vim-full is not set
@@ -7066,7 +7130,7 @@ Index: openwrt/.config
  # CONFIG_PACKAGE_vim-help is not set
  # CONFIG_PACKAGE_vim-runtime is not set
  # CONFIG_PACKAGE_zile is not set
-@@ -6567,7 +9490,7 @@ CONFIG_PACKAGE_uboot-envtools=y
+@@ -6567,7 +9521,7 @@ CONFIG_PACKAGE_uboot-envtools=y
  #
  # CONFIG_PACKAGE_ccrypt is not set
  # CONFIG_PACKAGE_certtool is not set
@@ -7075,7 +7139,7 @@ Index: openwrt/.config
  # CONFIG_PACKAGE_cryptsetup-ssh is not set
  # CONFIG_PACKAGE_gnupg is not set
  # CONFIG_PACKAGE_gnupg2 is not set
-@@ -6575,50 +9498,55 @@ CONFIG_PACKAGE_uboot-envtools=y
+@@ -6575,50 +9529,55 @@ CONFIG_PACKAGE_uboot-envtools=y
  # CONFIG_PACKAGE_gnutls-utils is not set
  # CONFIG_PACKAGE_gpgv is not set
  # CONFIG_PACKAGE_gpgv2 is not set
@@ -7142,7 +7206,7 @@ Index: openwrt/.config
  # CONFIG_PACKAGE_owfs is not set
  # CONFIG_PACKAGE_owshell is not set
  # CONFIG_PACKAGE_resize2fs is not set
-@@ -6661,17 +9589,18 @@ CONFIG_PACKAGE_uboot-envtools=y
+@@ -6661,17 +9620,18 @@ CONFIG_PACKAGE_uboot-envtools=y
  #
  # SSL
  #
@@ -7164,7 +7228,7 @@ Index: openwrt/.config
  # end of Shells
  
  #
-@@ -6702,30 +9631,31 @@ CONFIG_PACKAGE_uboot-envtools=y
+@@ -6702,30 +9662,31 @@ CONFIG_PACKAGE_uboot-envtools=y
  # CONFIG_PACKAGE_setterm is not set
  # CONFIG_PACKAGE_tio is not set
  # CONFIG_PACKAGE_tmux is not set
@@ -7209,7 +7273,7 @@ Index: openwrt/.config
  # end of Userspace GPIO Drivers
  
  #
-@@ -6737,6 +9667,26 @@ CONFIG_PACKAGE_uboot-envtools=y
+@@ -6737,6 +9698,26 @@ CONFIG_PACKAGE_uboot-envtools=y
  #
  # Virtualization
  #
@@ -7236,7 +7300,7 @@ Index: openwrt/.config
  # end of Virtualization
  
  #
-@@ -6787,8 +9737,9 @@ CONFIG_PACKAGE_uboot-envtools=y
+@@ -6787,9 +9768,11 @@ CONFIG_PACKAGE_uboot-envtools=y
  # end of libselinux tools
  
  # CONFIG_PACKAGE_ack is not set
@@ -7245,9 +7309,11 @@ Index: openwrt/.config
 -# CONFIG_PACKAGE_adb is not set
 +CONFIG_PACKAGE_adb=m
  # CONFIG_PACKAGE_airos-dfs-reset is not set
++CONFIG_PACKAGE_aliyun-cli=m
  # CONFIG_PACKAGE_ap51-flash is not set
  # CONFIG_PACKAGE_arp-whisper is not set
-@@ -6799,7 +9750,7 @@ CONFIG_PACKAGE_uboot-envtools=y
+ # CONFIG_PACKAGE_at is not set
+@@ -6799,7 +9782,7 @@ CONFIG_PACKAGE_uboot-envtools=y
  # CONFIG_PACKAGE_augeas-lenses-tests is not set
  # CONFIG_PACKAGE_banhostlist is not set
  # CONFIG_PACKAGE_base16384 is not set
@@ -7256,7 +7322,7 @@ Index: openwrt/.config
  # CONFIG_PACKAGE_bluelog is not set
  # CONFIG_PACKAGE_bluez-daemon is not set
  # CONFIG_PACKAGE_bluez-tools is not set
-@@ -6807,6 +9758,7 @@ CONFIG_PACKAGE_uboot-envtools=y
+@@ -6807,6 +9790,7 @@ CONFIG_PACKAGE_uboot-envtools=y
  # CONFIG_PACKAGE_bluez-utils-btmon is not set
  # CONFIG_PACKAGE_bluez-utils-extra is not set
  # CONFIG_PACKAGE_bluld is not set
@@ -7264,7 +7330,7 @@ Index: openwrt/.config
  # CONFIG_PACKAGE_bonniexx is not set
  # CONFIG_PACKAGE_borgbackup is not set
  # CONFIG_PACKAGE_bossa is not set
-@@ -6820,9 +9772,10 @@ CONFIG_PACKAGE_uboot-envtools=y
+@@ -6820,9 +9804,10 @@ CONFIG_PACKAGE_uboot-envtools=y
  # CONFIG_PACKAGE_cache-domains-wolfssl is not set
  # CONFIG_PACKAGE_cal is not set
  # CONFIG_PACKAGE_canutils is not set
@@ -7277,7 +7343,7 @@ Index: openwrt/.config
  # CONFIG_PACKAGE_checkpolicy is not set
  # CONFIG_PACKAGE_checksec is not set
  # CONFIG_PACKAGE_checksec_automator is not set
-@@ -6833,64 +9786,141 @@ CONFIG_PACKAGE_uboot-envtools=y
+@@ -6833,64 +9818,141 @@ CONFIG_PACKAGE_uboot-envtools=y
  # CONFIG_PACKAGE_cni-plugins is not set
  # CONFIG_PACKAGE_cni-plugins-nft is not set
  # CONFIG_PACKAGE_coap-client is not set
@@ -7459,7 +7525,7 @@ Index: openwrt/.config
  # CONFIG_PACKAGE_coreutils-numfmt is not set
  # CONFIG_PACKAGE_coreutils-od is not set
  # CONFIG_PACKAGE_coreutils-paste is not set
-@@ -6898,68 +9928,93 @@ CONFIG_PACKAGE_uboot-envtools=y
+@@ -6898,68 +9960,93 @@ CONFIG_PACKAGE_uboot-envtools=y
  # CONFIG_PACKAGE_coreutils-pinky is not set
  # CONFIG_PACKAGE_coreutils-pr is not set
  # CONFIG_PACKAGE_coreutils-printenv is not set
@@ -7587,7 +7653,7 @@ Index: openwrt/.config
  # CONFIG_PACKAGE_domoticz is not set
  # CONFIG_PACKAGE_dos2unix is not set
  # CONFIG_PACKAGE_dropbearconvert is not set
-@@ -6968,37 +10023,39 @@ CONFIG_PACKAGE_uboot-envtools=y
+@@ -6968,37 +10055,39 @@ CONFIG_PACKAGE_uboot-envtools=y
  # CONFIG_PACKAGE_dump1090 is not set
  # CONFIG_PACKAGE_dysk is not set
  # CONFIG_PACKAGE_ecdsautils is not set
@@ -7636,7 +7702,7 @@ Index: openwrt/.config
  # CONFIG_PACKAGE_gkermit is not set
  # CONFIG_PACKAGE_gl-puli-mcu is not set
  # CONFIG_PACKAGE_gnuplot is not set
-@@ -7007,7 +10064,7 @@ CONFIG_PACKAGE_uboot-envtools=y
+@@ -7007,7 +10096,7 @@ CONFIG_PACKAGE_uboot-envtools=y
  # CONFIG_PACKAGE_gpsd is not set
  # CONFIG_PACKAGE_gpsd-clients is not set
  # CONFIG_PACKAGE_gpsd-utils is not set
@@ -7645,7 +7711,7 @@ Index: openwrt/.config
  # CONFIG_PACKAGE_hamlib is not set
  # CONFIG_PACKAGE_haserl is not set
  # CONFIG_PACKAGE_hashdeep is not set
-@@ -7015,28 +10072,40 @@ CONFIG_PACKAGE_uboot-envtools=y
+@@ -7015,28 +10104,40 @@ CONFIG_PACKAGE_uboot-envtools=y
  # CONFIG_PACKAGE_hplip-common is not set
  # CONFIG_PACKAGE_hplip-sane is not set
  # CONFIG_PACKAGE_hub-ctrl is not set
@@ -7692,7 +7758,7 @@ Index: openwrt/.config
  # CONFIG_PACKAGE_libflashrom is not set
  CONFIG_PACKAGE_libjson-script=y
  # CONFIG_PACKAGE_librespeed-cli is not set
-@@ -7046,15 +10115,15 @@ CONFIG_PACKAGE_libjson-script=y
+@@ -7046,15 +10147,15 @@ CONFIG_PACKAGE_libjson-script=y
  # CONFIG_PACKAGE_logger is not set
  # CONFIG_PACKAGE_logrotate is not set
  # CONFIG_PACKAGE_lolcat is not set
@@ -7711,7 +7777,7 @@ Index: openwrt/.config
  # CONFIG_PACKAGE_lxc is not set
  # CONFIG_PACKAGE_maccalc is not set
  # CONFIG_PACKAGE_macchanger is not set
-@@ -7070,15 +10139,15 @@ CONFIG_PACKAGE_libjson-script=y
+@@ -7070,15 +10171,15 @@ CONFIG_PACKAGE_libjson-script=y
  # CONFIG_PACKAGE_micrond is not set
  # CONFIG_PACKAGE_miniflux is not set
  # CONFIG_PACKAGE_mmc-utils is not set
@@ -7731,7 +7797,7 @@ Index: openwrt/.config
  # CONFIG_PACKAGE_namei is not set
  # CONFIG_PACKAGE_naywatch is not set
  # CONFIG_PACKAGE_nerdctl is not set
-@@ -7086,20 +10155,22 @@ CONFIG_PACKAGE_libjson-script=y
+@@ -7086,20 +10187,22 @@ CONFIG_PACKAGE_libjson-script=y
  # CONFIG_PACKAGE_netopeer2-server is not set
  # CONFIG_PACKAGE_netwhere is not set
  # CONFIG_PACKAGE_nnn is not set
@@ -7756,7 +7822,7 @@ Index: openwrt/.config
  # CONFIG_PACKAGE_openzwave is not set
  # CONFIG_PACKAGE_openzwave-config is not set
  # CONFIG_PACKAGE_owipcalc is not set
-@@ -7108,9 +10179,10 @@ CONFIG_PACKAGE_libjson-script=y
+@@ -7108,9 +10211,10 @@ CONFIG_PACKAGE_libjson-script=y
  # CONFIG_PACKAGE_pax-utils is not set
  # CONFIG_PACKAGE_pciids is not set
  # CONFIG_PACKAGE_pciutils is not set
@@ -7768,7 +7834,7 @@ Index: openwrt/.config
  
  #
  # Configuration
-@@ -7123,24 +10195,42 @@ CONFIG_PACKAGE_libjson-script=y
+@@ -7123,24 +10227,42 @@ CONFIG_PACKAGE_libjson-script=y
  # CONFIG_PACKAGE_powertop is not set
  # CONFIG_PACKAGE_pps-tools is not set
  # CONFIG_PACKAGE_prlimit is not set
@@ -7816,7 +7882,7 @@ Index: openwrt/.config
  # CONFIG_PACKAGE_restic is not set
  # CONFIG_PACKAGE_rev is not set
  # CONFIG_PACKAGE_ripgrep is not set
-@@ -7149,12 +10239,12 @@ CONFIG_PACKAGE_libjson-script=y
+@@ -7149,12 +10271,12 @@ CONFIG_PACKAGE_libjson-script=y
  # CONFIG_PACKAGE_rtl-sdr is not set
  # CONFIG_PACKAGE_rtl_433 is not set
  # CONFIG_PACKAGE_rtl_433-ssl is not set
@@ -7831,7 +7897,7 @@ Index: openwrt/.config
  # CONFIG_PACKAGE_sedutil is not set
  # CONFIG_PACKAGE_selinux-audit2allow is not set
  # CONFIG_PACKAGE_selinux-chcat is not set
-@@ -7182,7 +10272,7 @@ CONFIG_PACKAGE_libjson-script=y
+@@ -7182,7 +10304,7 @@ CONFIG_PACKAGE_libjson-script=y
  # CONFIG_PACKAGE_slide-switch is not set
  # CONFIG_PACKAGE_smartd is not set
  # CONFIG_PACKAGE_smartd-mail is not set
@@ -7840,7 +7906,7 @@ Index: openwrt/.config
  # CONFIG_PACKAGE_smartmontools-drivedb is not set
  # CONFIG_PACKAGE_sms-tool is not set
  # CONFIG_PACKAGE_smstools3 is not set
-@@ -7198,7 +10288,6 @@ CONFIG_STRACE_NONE=y
+@@ -7198,7 +10320,6 @@ CONFIG_STRACE_NONE=y
  # CONFIG_STRACE_LIBDW is not set
  # CONFIG_STRACE_LIBUNWIND is not set
  # CONFIG_PACKAGE_strelaysrv is not set
@@ -7848,7 +7914,7 @@ Index: openwrt/.config
  # CONFIG_PACKAGE_stress-ng is not set
  # CONFIG_PACKAGE_sumo is not set
  # CONFIG_PACKAGE_swanmon is not set
-@@ -7207,8 +10296,14 @@ CONFIG_STRACE_NONE=y
+@@ -7207,8 +10328,14 @@ CONFIG_STRACE_NONE=y
  # CONFIG_PACKAGE_sysrepocfg is not set
  # CONFIG_PACKAGE_sysrepoctl is not set
  # CONFIG_PACKAGE_sysstat is not set
@@ -7865,7 +7931,7 @@ Index: openwrt/.config
  # CONFIG_PACKAGE_taskwarrior is not set
  # CONFIG_PACKAGE_telegraf is not set
  # CONFIG_PACKAGE_telegraf-full is not set
-@@ -7216,15 +10311,15 @@ CONFIG_STRACE_NONE=y
+@@ -7216,15 +10343,15 @@ CONFIG_STRACE_NONE=y
  # CONFIG_PACKAGE_telldus-mqtt is not set
  # CONFIG_PACKAGE_temperusb is not set
  # CONFIG_PACKAGE_tesseract is not set
@@ -7885,7 +7951,7 @@ Index: openwrt/.config
  # CONFIG_PACKAGE_ucode-mod-uclient is not set
  # CONFIG_PACKAGE_ucode-mod-udebug is not set
  # CONFIG_PACKAGE_udebug-cli is not set
-@@ -7237,27 +10332,24 @@ CONFIG_STRACE_NONE=y
+@@ -7237,27 +10364,24 @@ CONFIG_STRACE_NONE=y
  # CONFIG_PACKAGE_uledd is not set
  # CONFIG_PACKAGE_unix2dos is not set
  # CONFIG_PACKAGE_unshare is not set
