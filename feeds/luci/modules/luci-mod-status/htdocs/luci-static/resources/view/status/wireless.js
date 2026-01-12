@@ -118,7 +118,7 @@ return view.extend({
 
 			return Promise.all(tasks).then(L.bind(function(datasets) {
 				for (let gi = 0; gi < graphPolls.length; gi++) {
-					const ctx = graphPolls[gi];
+					let ctx = graphPolls[gi];
 					const data = datasets[gi];
 					const values = ctx.values;
 					const lines = ctx.lines;
@@ -340,7 +340,7 @@ return view.extend({
 
 		return E([], [
 			E('h2', _('Wireless')),
-			E('div', {'class': 'cbi-map-descr'}, _('This page displays the wireless metrics, for each available radio interfaces.')),
+			E('div', {'class': 'cbi-map-descr'}, _('This page displays the wireless metrics for each available radio interface.')),
 			v
 		]);
 	},
