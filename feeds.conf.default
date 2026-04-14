@@ -2,8 +2,8 @@ src-git passwall_packages https://github.com/Openwrt-Passwall/openwrt-passwall-p
 src-git passwall_luci https://github.com/Openwrt-Passwall/openwrt-passwall.git;main
 
 src-git diskman https://github.com/lisaac/luci-app-diskman.git;master
+src-git dockerman https://github.com/lisaac/luci-app-dockerman.git;master
 
-# src-git opentopd https://github.com/sirpdboy/sirpdboy-package.git;main
 src-git ddnsgo https://github.com/sirpdboy/luci-app-ddns-go.git;main
 
 src-git argon https://github.com/sunowsir/luci-theme-argon.git;master
