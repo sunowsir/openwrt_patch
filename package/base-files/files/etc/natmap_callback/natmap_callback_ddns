@@ -1,0 +1,180 @@
+#!/bin/bash
+#
+#       * File     : natmap_callback_ddns
+#       * Author   : sunowsir (rebuild with jshn)
+#       * Mail     : sunow.wang@gmail.com
+#       * Github   : github.com/sunowsir
+
+WORK_DIR="$(dirname "$(readlink -f "${0}")")"
+source /usr/share/libubox/jshn.sh
+source "${WORK_DIR}/natmap_callback_config"
+source "${WORK_DIR}/natmap_callback_common"
+
+
+# ==============================================================
+# DNS 记录查询
+# ==============================================================
+
+function record_query() {
+    local access_domain="${1}"
+    local zone_id="${2}"
+    curl -s -X GET "${CLOUDFLARE_API_URL}/${zone_id}/dns_records?name=${access_domain}" \
+        -H "Authorization: Bearer ${AUTH}" \
+        -H "Content-Type: application/json"
+}
+
+# ==============================================================
+# 用 jshn.sh 提取 result[0].field
+# 流程: json_load → json_select result → json_select 0 → json_get_var
+# ==============================================================
+
+function record_id_from_json() {
+    local resp="$1"
+    json_cleanup
+    json_init
+    json_load "${resp}"
+
+    json_select "result" || {
+        json_cleanup  
+        return 1
+    }
+    json_select 1 || {
+        json_cleanup  
+        return 1
+    }
+
+    local record_id
+    json_get_var record_id id
+
+    json_select ..
+    json_select ..
+
+    echo "${record_id}"
+    json_cleanup
+}
+
+function record_ip_from_json() {
+    local resp="$1"
+    json_cleanup
+    json_init
+    json_load "${resp}"
+    json_select "result" || {
+        json_cleanup  
+        return 1
+    }
+
+    json_select 1 || {
+        json_cleanup  
+        return 1
+    }
+
+    local record_ip
+    json_get_var record_ip content
+
+    echo "${record_ip}"
+    json_cleanup
+}
+
+# ==============================================================
+# DNS 记录操作（带重试）
+# ==============================================================
+
+function record_add() {
+    local access_domain="${1}"
+    local ipaddr="${2}"
+    local zone_id="${3}"
+    local proxied="${5}"
+
+    for ((i = 0; i < ${RETRY_NUM:-3}; i++)); do
+        local resp
+        resp="$(curl -s -X POST "${CLOUDFLARE_API_URL}/${zone_id}/dns_records" \
+            -H "Authorization: Bearer ${AUTH}" \
+            -H "Content-Type: application/json" \
+            --data "{\"type\":\"A\",\"name\":\"${access_domain}\",\"content\":\"${ipaddr}\",\"proxied\":${proxied}}")"
+
+        if _cf_api_ok "${resp}"; then
+            log "DNS: 已添加 A 记录 ${access_domain} -> ${ipaddr}"
+            return 0
+        fi
+        log "DNS: 添加记录失败（重试 ${i}）: ${resp}"
+    done
+    return 127
+}
+
+function record_modify() {
+    local access_domain="${1}"
+    local ipaddr="${2}"
+    local zone_id="${3}"
+    local record_id="${4}"
+    local proxied="${5}"
+
+    for ((i = 0; i < ${RETRY_NUM:-3}; i++)); do
+        local resp
+        resp="$(curl -s -X PUT "${CLOUDFLARE_API_URL}/${zone_id}/dns_records/${record_id}" \
+            -H "Authorization: Bearer ${AUTH}" \
+            -H "Content-Type: application/json" \
+            --data "{\"type\":\"A\",\"name\":\"${access_domain}\",\"content\":\"${ipaddr}\",\"proxied\":${proxied}}")"
+
+        if _cf_api_ok "${resp}"; then
+            log "DNS: 已修改 A 记录 ${access_domain} -> ${ipaddr}"
+            return 0
+        fi
+        log "DNS: 修改记录失败（重试 ${i}）: ${resp}"
+    done
+    return 127
+}
+
+function record_upsert() {
+    local access_domain="${1}"
+    local ipaddr="${2}"
+    local proxied="${3}"
+
+    local zone_id
+    zone_id="$(zone_id_from_json "$(zone_id_query)" )"
+
+    local resp record_id
+    resp="$(record_query "${access_domain}" "${zone_id}" )"
+    record_id="$(record_id_from_json "${resp}")"
+
+    if [[ -z "${record_id}" ]]; then
+        record_add "${access_domain}" "${ipaddr}" "${zone_id}" "${proxied}"
+        return $?
+    fi
+
+    local current_ip
+    current_ip="$(record_ip_from_json "${resp}")"
+    if [[ "${current_ip}" = "${ipaddr}" ]]; then
+        log "DNS: ${access_domain} 当前 IP=${ipaddr}，无需修改"
+        return 0
+    fi
+
+    record_modify "${access_domain}" "${ipaddr}" "${zone_id}" "${record_id}" "${proxied}"
+    return $?
+}
+
+# ==============================================================
+# 供 natmap_callback_main 调用的入口
+# ==============================================================
+function natmap_callback_ddns() {
+    local public_ip="${1}"
+    local private_port="${2}"
+
+    local sub_domain
+    sub_domain="$(uci -q get "natmap_callback.${private_port}")"
+
+    if [ -z "${sub_domain}" ]; then
+        log "DNS: 未配置子域名 for port ${private_port}"
+        return 0
+    fi
+
+    local access_domain="${sub_domain}.${ROOT_DOMAIN}"
+    log "DNS: 检查并更新 ${access_domain} -> ${public_ip}"
+    record_upsert "${access_domain}" "${public_ip}" "true"
+
+    local redirect_domain="${REDIRECT_SUBDOMAIN}.${ROOT_DOMAIN}"
+    log "DNS: 检查并更新 ${redirect_domain} -> ${public_ip}"
+    record_upsert "${redirect_domain}" "${public_ip}" "false"
+
+    return $?
+}
+
